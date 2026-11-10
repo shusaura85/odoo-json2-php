@@ -1,0 +1,35 @@
+{
+    "name": "shusaura85/odoo-json2-php",
+    "description": "Simple PHP client library for Odoo JSON-2 API (Odoo 19+)",
+    "type": "library",
+    "keywords": [
+        "odoo",
+        "json-2",
+        "api",
+        "client",
+        "erp"
+    ],
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "authors": [
+        {
+            "name": "Shu Saura"
+            "role": "Developer",
+		}
+    ],
+    "require": {
+        "php": "^8.2",
+        "guzzlehttp/guzzle": "^7.8"
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "OdooPHP\\": "src/"
+        }
+    },
+    "autoload-dev": {
+    }
+}
+
