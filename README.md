@@ -221,7 +221,7 @@ $orders = $client->search_read('sale.order', [
 ], 
     fields: ['name', 'partner_id', 'amount_total'],
     limit: 20
-]);
+);
 ```
 
 ### Working with Products
