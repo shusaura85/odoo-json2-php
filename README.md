@@ -218,9 +218,9 @@ $client->call('sale.order', 'action_confirm', [
 // Search for confirmed orders
 $orders = $client->search_read('sale.order', [
     ['state', '=', 'sale']
-], [
-    'fields' => ['name', 'partner_id', 'amount_total'],
-    'limit' => 20
+], 
+    fields: ['name', 'partner_id', 'amount_total'],
+    limit: 20
 ]);
 ```
 
