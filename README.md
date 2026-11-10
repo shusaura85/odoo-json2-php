@@ -83,10 +83,11 @@ $partners = $client->read('res.partner', [1, 2, 3], [
 // Search and read in one call
 $partners = $client->search_read('res.partner', [
     ['is_company', '=', true]
-], [
-    'fields' => ['name', 'email', 'phone'],
-    'limit' => 10
-]);
+], 
+    fields: ['name', 'email', 'phone'],
+    limit: 10,
+	order: 'name desc'
+);
 ```
 
 ### Create Records
