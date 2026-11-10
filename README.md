@@ -56,11 +56,11 @@ $partners = $client->search('res.partner', [
 // Search with options
 $partners = $client->search('res.partner', [
     ['is_company', '=', true]
-], [
-    'limit' => 10,
-    'offset' => 0,
-    'order' => 'name asc'
-]);
+], 
+    limit: 10,
+    offset: 0,
+    order: 'name asc'
+);
 ```
 
 ### Read Records
