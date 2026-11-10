@@ -14,8 +14,8 @@
     "prefer-stable": true,
     "authors": [
         {
-            "name": "Shu Saura"
-            "role": "Developer",
+            "name": "Shu Saura",
+            "role": "Developer"
 		}
     ],
     "require": {
