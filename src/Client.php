@@ -174,6 +174,35 @@ class Client extends BaseClient
 		return $this->call($model, 'has_access', $params);
 		}
 
+
+	/**
+	* Helper function to execute any action_* method that takes an id list. Allows skipping the 'action_' part of the method.
+	* If action needs more params, use the optional extra arg to add them
+	* @return mixed - depends on the called action
+	*/
+	public function action(string $model, string $method, array $ids, array $extra = [], ?array $context = null): mixed
+		{
+		$params = [];
+		$params['ids']	= $ids;
+		if (!is_null($context))	{ $params['context'] = $context; }
+		// if any extra params are needed
+		if (count($extra) > 0)
+			{
+			foreach ($extra as $exp => $exv)
+				{
+				$params[$exp] = $exv;
+				}
+			}
+		
+		if (substr(strtolower($method), 0, 7) != 'action_')
+			{
+			$method = 'action_'.$method;
+			}
+		
+		return $this->call($model, $method, $params);
+		}
+
+
 	/**
 	* Mark the specified ids as inactive
 	* @return null
