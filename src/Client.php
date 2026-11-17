@@ -31,13 +31,13 @@ class Client extends BaseClient
 		}
 
 	/**
-	* Search for records using the specified filter with optional limits and sorting
+	* Search for records using the specified domain with optional limits and sorting
 	* @return array of integer - A list of integer ids for the identified records
 	**/
-	public function search(string $model, array $filter, ?int $limit = null, ?int $offset = null, ?string $order = null, ?array $context = null): array
+	public function search(string $model, array $domain, ?int $limit = null, ?int $offset = null, ?string $order = null, ?array $context = null): array
 		{
 		$params = [];
-		$params['domain']	= $filter;
+		$params['domain']	= $domain;
 		if (!is_null($limit))	{ $params['limit'] = $limit; }
 		if (!is_null($offset))	{ $params['offset'] = $offset; }
 		if (!is_null($order))	{ $params['order'] = $order; }
@@ -47,13 +47,13 @@ class Client extends BaseClient
 		}
 	
 	/**
-	* Search for records using the specified filter with optional limit
+	* Search for records using the specified domain with optional limit
 	* @return int - how many records it found
 	**/
-	public function count(string $model, array $filter, ?int $limit = null, ?array $context = null): int
+	public function count(string $model, array $domain, ?int $limit = null, ?array $context = null): int
 		{
 		$params = [];
-		$params['domain']	= $filter;
+		$params['domain']	= $domain;
 		if (!is_null($limit))	{ $params['limit'] = $limit; }
 		if (!is_null($context))	{ $params['context'] = $context; }
 		
@@ -61,13 +61,13 @@ class Client extends BaseClient
 		}
 	
 	/**
-	* Search for records using the specified filter with optional limits and sorting
+	* Search for records using the specified domain with optional limits and sorting
 	* @return array - return the records and their data as found
 	**/
-	public function search_read(string $model, array $filter, ?array $fields = null, ?int $limit = null, ?int $offset = null, ?string $order = null, ?array $context = null): array
+	public function search_read(string $model, array $domain, ?array $fields = null, ?int $limit = null, ?int $offset = null, ?string $order = null, ?array $context = null): array
 		{
 		$params = [];
-		$params['domain']	= $filter;
+		$params['domain']	= $domain;
 		if (!is_null($fields))	{ $params['fields'] = $fields; }
 		if (!is_null($limit))	{ $params['limit'] = $limit; }
 		if (!is_null($offset))	{ $params['offset'] = $offset; }
